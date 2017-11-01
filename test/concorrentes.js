@@ -39,7 +39,7 @@ describe('Concorrentes ', () => {
                 nome: 'Teste inutil'
                 ,descricao: 'Descrição produto inutik'
                 ,preco: 0.00
-                ,empresa:
+                ,empresa: 'Concoorente Util'
                 ,photo: ''
             }
 

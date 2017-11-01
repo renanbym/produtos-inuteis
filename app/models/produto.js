@@ -9,7 +9,7 @@ module.exports = () => {
             nome: { type: String, required: true }
             ,descricao:  { type: String,  default: '' }
             ,categorias:  [{
-                categoria: { type: Schema.Types.ObjectId, ref: 'Categoria' },
+                categoria: { type: SchemaTypes.ObjectId, ref: 'Categoria' },
             }]
             ,preco:  { type: String,  type: SchemaTypes.Double, min: 0, required: true  }
             ,photo:  { type: String,  default: '', required: true  }

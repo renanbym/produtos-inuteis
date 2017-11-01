@@ -41,8 +41,8 @@ describe('Categorias ', () => {
         it('create categoria', (done) => {
 
             let categoria = {
-                ,nome: 'Categoria Inútil'
-                photo: ''
+                nome: 'Categoria Inútil'
+                ,photo: ''
             }
 
             chai.request(server)
@@ -79,9 +79,9 @@ describe('Categorias ', () => {
 
         it('delete categoria id', (done) => {
 
-            let categoria = {
-                ,nome: 'Categoria Inútil'
-                photo: ''
+            let data = {
+                nome: 'Categoria Inútil'
+                ,photo: ''
             }
 
             let categoriaModel =  mongoose.model('Categoria');

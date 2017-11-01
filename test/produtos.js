@@ -59,7 +59,7 @@ describe('Produtos ', () => {
                     nome: 'Produto inutil'
                     ,descricao: 'Descrição produto inutik'
                     ,preco: 0.00
-                    ,categorias: [ categoria: categoria._id ]
+                    ,categorias: [{ categoria: categoria._id }]
                     ,photo: 'img.jpg'
                 }
 
@@ -125,7 +125,7 @@ describe('Produtos ', () => {
                     nome: 'Produto inutil'
                     ,descricao: 'Descrição produto inutik'
                     ,preco: 0.00
-                    ,categorias: [ categoria: categoria._id]
+                    ,categorias: [{ categoria: categoria._id }]
                     ,photo: 'img.jpg'
                 }
 
