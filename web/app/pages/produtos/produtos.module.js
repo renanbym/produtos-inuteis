@@ -7,7 +7,7 @@
 
         $stateProvider
         .state('produtos', {
-            url: '/produtos',
+            url: '/',
             templateUrl: '/pages/produtos/views/lista.html',
             controller: 'ProdutosPageCtrl',
         })

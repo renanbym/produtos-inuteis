@@ -1,1 +1,14 @@
-produto
+<div class="produtos--lista" ng-repeat="data in produtos">
+    <div class="produtos--lista--picture">
+        <img ng-src="{{data.photo}}" alt="">
+    </div>
+    <p>{{data.nome}}</p>
+    <div class="produtos--lista--price">R$ {{data.preco | number: 2}}</div>
+
+    <div class="produtos--lista--concorrente">
+        <p>Preço do concorrente</p>
+        <span>{{data.concorrentes[0].empresa}}</span>
+        <img ng-src="{{data.concorrentes[0].photo}}" alt="">
+        <div class="produtos--lista--price">R$ {{data.concorrentes[0].preco | number: 2 }}</div>
+    </div>
+</div>

@@ -3,9 +3,11 @@
     angular.module('ProdutosInuteis.pages.cms')
     .controller('CmsCategoriasListaPageCtrl', CmsCategoriasListaPageCtrl)
 
-    function CmsCategoriasListaPageCtrl($scope, API) {
+    function CmsCategoriasListaPageCtrl($scope, $rootScope, API) {
 
         $scope.categorias = [];
+        $rootScope.cms = true;
+
 
         API.get({
             path: 'categorias'

@@ -3,10 +3,11 @@
     angular.module('ProdutosInuteis.pages.cms')
     .controller('CmsProdutosCadastroPageCtrl', CmsProdutosCadastroPageCtrl)
 
-    function CmsProdutosCadastroPageCtrl($scope, $state, API) {
+    function CmsProdutosCadastroPageCtrl($scope, $state, $rootScope, API) {
 
         $scope.categorias = [];
         $scope.data = {};
+        $rootScope.cms = true;
 
         API.get({
             path: 'categorias'

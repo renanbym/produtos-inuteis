@@ -6,3 +6,6 @@ Partindo do princípio que você tem node e mongo instalados.
 $ npm install
 $ npm run start
 ```
+
+CMS >> http://localhost:3001/#!/cms
+SITE >> http://localhost:3001/

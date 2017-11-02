@@ -7,17 +7,19 @@ html {
   position: relative;
   min-height: 100%; }
 
+
 body {
   overflow-x: hidden; }
 
 body.sticky-footer {
-  margin-bottom: 56px; }
+   }
   body.sticky-footer .content-wrapper {
     min-height: calc(100vh - 56px); }
 
 body.fixed-nav {
   padding-top: 56px; }
 
+.cms{
 .content-wrapper {
   min-height: calc(100vh - 56px);
   padding-top: 1rem; }
@@ -344,3 +346,4 @@ footer.sticky-footer {
 @media (min-width: 992px) {
   body.sidenav-toggled footer.sticky-footer {
     width: calc(100% - 55px); } }
+}

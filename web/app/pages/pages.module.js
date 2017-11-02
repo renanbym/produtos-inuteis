@@ -12,7 +12,7 @@
         /*
         BUG  UI-routee
         */
-        $urlRouterProvider.otherwise('/produtos');
+        $urlRouterProvider.otherwise('/');
         // $urlRouterProvider.otherwise( function($injector) {
             // var $state = $injector.get("$state");
             // $state.go('auth');

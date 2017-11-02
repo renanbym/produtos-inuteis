@@ -7,38 +7,13 @@
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="/web/styles/style.css">
+    <link rel="stylesheet" href="/web/styles/app/theme.css">
+    <link rel="stylesheet" href="/web/styles/app/pages/produtos.css">
 
 </head>
-<body class="fixed-nav sticky-footer bg-dark">
+<body ng-class="cms ? 'cms fixed-nav sticky-footer bg-dark' : ''">
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-
-        <a class="navbar-brand" href="index.html">Produtos Inúteis</a>
-
-        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
-
-                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Produtos">
-                    <a class="nav-link" ui-sref="cms">
-                        <span class="nav-link-text">Produtos</span>
-                    </a>
-                </li>
-
-                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Categorias">
-                    <a class="nav-link" ui-sref="cms-categoria">
-                        <span class="nav-link-text">Categorias</span>
-                    </a>
-                </li>
-
-            </ul>
-
-        </div>
-    </nav>
+    <div ng-include src="'web/cms-menu.html'" ng-show="cms" ></div>
 
     <div class="content-wrapper ui-view"></div>
 

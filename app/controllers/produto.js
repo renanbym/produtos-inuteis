@@ -1,6 +1,7 @@
 module.exports = (app) => {
 
     const model = app.models.produto;
+    const modelConcorrente = app.models.concorrentes;
 
     const controller = {
 
@@ -13,11 +14,38 @@ module.exports = (app) => {
         }
 
         ,save: (req, res) => {
-            let query = new model(req.body);
-            query.save( (err, produto) => {
-                if(err) res.status(401).json({"code":401,"status":"error","message": err.errors })
-                else res.status(200).json({"code":200,"status":"success","data": produto })
-            })
+
+
+
+            if( req.body.concorrente ){
+
+                req.body.concorrentes = [];
+
+                Promise.all([
+                    modelConcorrente.requestSubmarino({term: req.body.concorrente })
+                    , modelConcorrente.requestWallmart({term: req.body.concorrente })
+                ])
+                .then((conco) => {
+
+                    req.body.concorrentes = conco[0].concat( conco[1] );
+                    
+                    let query = new model(req.body);
+                    query.save( (err, produto) => {
+                        if(err) res.status(401).json({"code":401,"status":"error","message": err.errors })
+                        else res.status(200).json({"code":200,"status":"success","data": produto })
+                    })
+
+                }).catch((err) => { console.log(err);  })
+
+            }else{
+                let query = new model(req.body);
+                query.save( (err, produto) => {
+                    if(err) res.status(401).json({"code":401,"status":"error","message": err.errors })
+                    else res.status(200).json({"code":200,"status":"success","data": produto })
+                })
+
+            }
+
         }
 
         ,edit: (req, res) => {
@@ -32,7 +60,7 @@ module.exports = (app) => {
         }
 
         ,delete: (req, res) => {
-                let id = req.params.id;
+            let id = req.params.id;
             model.remove({_id: req.params.id }, (err, produto) => {
                 let msg_error = null;
                 if(err) res.status(401).json({"code":401,"status":"error","message": err.errors });
