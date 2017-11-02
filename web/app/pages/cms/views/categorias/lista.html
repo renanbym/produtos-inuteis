@@ -1,0 +1,41 @@
+<div class="container-fluid">
+
+    <div class="card mb-3">
+
+        <div class="card-header">
+            <button type="button" class="btn btn-info" ui-sref="cms-categoria-new">Cadastrar Categoria</button>
+        </div>
+
+        <div class="card-body">
+
+            <div class="table-responsive" ng-show="categorias" >
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Foto</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr ng-repeat="data in categorias">
+                            <td>{{data.nome}}</td>
+                            <td><img ng-src="{{data.foto}}" alt="" style="height: 50px; width: auto;" ></td>
+                            <td>
+                                <button type="button" class="btn btn-danger" ng-click="delete(data)">Apagar</button>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="alert alert-warning" ng-hide="categorias" >
+                Nenhum registro encontrado.
+            </div>
+
+        </div>
+    </div>
+</div>

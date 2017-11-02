@@ -32,7 +32,8 @@ module.exports = (app) => {
         }
 
         ,delete: (req, res) => {
-            model.remove({_id: req.body._id }, (err, produto) => {
+                let id = req.params.id;
+            model.remove({_id: req.params.id }, (err, produto) => {
                 let msg_error = null;
                 if(err) res.status(401).json({"code":401,"status":"error","message": err.errors });
                 if( produto.result.n === 0 ) msg_error = "Campos inválidos";

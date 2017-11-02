@@ -5,9 +5,10 @@ module.exports = (app) => {
     app.route('/api/produtos')
     .get( controller.all )
     .post( controller.save )
-    .delete( controller.delete )
 
     app.route('/api/produtos/:id')
-    .delete( controller.edit )
+    .post( controller.edit )
+    .delete( controller.delete )
+
 
 }

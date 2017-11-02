@@ -6,6 +6,8 @@
 
         'ngResource',
 
+        'ui.utils.masks',
+
         'ProdutosInuteis.pages',
         'ProdutosInuteis.theme',
     ])
