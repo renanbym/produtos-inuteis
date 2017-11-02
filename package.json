@@ -1,46 +1,50 @@
 {
-    "name": "produtos-inuteis",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-        "start": "./node_modules/mocha/bin/mocha --reporter spec --timeout 7000 && NODE_ENV=production nodemon app.js",
-        "dev":   "NODE_ENV=development nodemon app.js",
-        "build": "npm install",
-        "test":  "./node_modules/mocha/bin/mocha --reporter spec --timeout 7000"
-    },
-    "repository": {
-        "type": "git",
-        "url": "git+https://github.com/renanbym/produtos-inuteis.git"
-    },
-    "engines": {
-        "node": "6.10.2"
-    },
-    "author": "Renan Mariano <renanbym@gmail.com>",
-    "license": "MIT",
-    "bugs": {
-        "url": "https://github.com/renanbym/produtos-inuteis/issues"
-    },
-    "homepage": "https://github.com/renanbym/produtos-inuteis#readme",
-    "dependencies": {
-        "angular": "^1.6.6",
-        "angular-dynamic-number": "^2.5.1",
-        "angular-resource": "^1.6.6",
-        "angular-route": "^1.6.6",
-        "angular-ui-router": "^0.4.3",
-        "body-parser": "^1.18.2",
-        "bootstrap": "^3.3.7",
-        "ejs": "^2.5.7",
-        "express": "^4.16.2",
-        "express-load": "^1.1.16",
-        "http": "0.0.0",
-        "mongoose": "^4.12.5",
-        "mongoose-double": "0.0.1"
-    },
-    "devDependencies": {
-        "chai": "^4.1.2",
-        "chai-http": "^3.0.0",
-        "mocha": "^4.0.1",
-        "nodemon": "^1.12.1"
-    }
+  "name": "produtos-inuteis",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "./node_modules/mocha/bin/mocha --reporter spec --timeout 7000 && NODE_ENV=production nodemon app.js",
+    "dev": "NODE_ENV=development nodemon app.js",
+    "build": "npm install",
+    "test": "./node_modules/mocha/bin/mocha --reporter spec --timeout 7000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/renanbym/produtos-inuteis.git"
+  },
+  "engines": {
+    "node": "6.10.2"
+  },
+  "author": "Renan Mariano <renanbym@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/renanbym/produtos-inuteis/issues"
+  },
+  "homepage": "https://github.com/renanbym/produtos-inuteis#readme",
+  "dependencies": {
+    "angular": "^1.5.0",
+    "angular-dynamic-number": "^2.5.1",
+    "angular-resource": "^1.6.6",
+    "angular-route": "^1.6.6",
+    "angular-ui-router": "^0.4.3",
+    "body-parser": "^1.18.2",
+    "bootstrap": "^3.3.7",
+    "ejs": "^2.5.7",
+    "express": "^4.16.2",
+    "express-load": "^1.1.16",
+    "http": "0.0.0",
+    "mongoose": "^4.12.5",
+    "mongoose-double": "0.0.1",
+    "ngsweetalert": "^1.1.3"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "chai-http": "^3.0.0",
+    "grunt": "^1.0.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-injector": "^1.1.0",
+    "mocha": "^4.0.1",
+    "nodemon": "^1.12.1"
+  }
 }

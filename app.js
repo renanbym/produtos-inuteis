@@ -21,7 +21,8 @@ const server = http.createServer(app);
 app.set('view engine', 'ejs');
 app.set('views', './web');
 
-app.use('/public', express.static('./web'));
+app.use('/web', express.static('./web'));
+app.use('/pages', express.static('./web/app/pages'));
 app.use('/node_modules', express.static('./node_modules'));
 app.disable('x-powered-by');
 app.set('trust proxy', 1);
