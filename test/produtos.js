@@ -22,19 +22,25 @@ describe('Produtos ', () => {
 
             let produto = {
                 descricao: 'Descrição produto inutik'
-                ,preco: 0.00
-                ,photo: ''
+                ,preco: -1.00
+                ,photo: 'img.jpg'
             }
 
             chai.request(server)
             .post('/api/produtos')
             .send(produto)
             .end( (err, res) => {
+
                 res.should.have.status(401);
                 res.body.status.should.be.equal('error');
                 res.body.message.should.be.a('object');
+
+                res.body.message.should.have.property('preco');
+                res.body.message.preco.should.have.property('kind').eql('min');
+
                 res.body.message.should.have.property('nome');
                 res.body.message.nome.should.have.property('kind').eql('required');
+
                 res.body.message.should.have.property('categorias');
                 res.body.message.categorias.should.have.property('kind').eql('required');
 
@@ -53,14 +59,21 @@ describe('Produtos ', () => {
             let categoriaModel =  mongoose.model('Categoria');
             let categoria = new categoriaModel(data);
 
-            categoria.save( (err, categoria) => {
+            categoria.save( (err, cat) => {
 
                 let produto = {
                     nome: 'Produto inutil'
                     ,descricao: 'Descrição produto inutik'
                     ,preco: 0.00
-                    ,categorias: [{ categoria: categoria._id }]
+                    ,categorias: [{ categoria: cat._id }]
                     ,photo: 'img.jpg'
+                    ,concorrentes: [{
+                        nome: 'produto bom'
+                        ,descricao:  'descricao produto bom'
+                        ,empresa:  'Empresa util'
+                        ,preco:  10.10
+                        ,photo:  'img.jpg'
+                    }]
                 }
 
                 chai.request(server)
@@ -76,6 +89,8 @@ describe('Produtos ', () => {
                     res.body.data.should.have.property('photo');
                     res.body.data.should.have.property('categorias');
                     res.body.data.categorias.should.be.an('array');
+                    res.body.data.should.have.property('concorrentes');
+                    res.body.data.concorrentes.should.be.an('array');
                     done()
                 })
 

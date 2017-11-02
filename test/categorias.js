@@ -20,13 +20,13 @@ describe('Categorias ', () => {
 
         it('does not return the POST, because undefined', (done) => {
 
-            let categoria = {
-                photo: ''
+            let data = {
+                foto: ''
             }
 
             chai.request(server)
             .post('/api/categorias')
-            .send(categoria)
+            .send(data)
             .end( (err, res) => {
                 res.should.have.status(401);
                 res.body.status.should.be.equal('error');
@@ -40,20 +40,20 @@ describe('Categorias ', () => {
 
         it('create categoria', (done) => {
 
-            let categoria = {
+            let data = {
                 nome: 'Categoria Inútil'
-                ,photo: ''
+                ,foto: 'img.jpg'
             }
 
             chai.request(server)
             .post('/api/categorias')
-            .send(categoria)
+            .send(data)
             .end( (err, res) => {
                 res.should.have.status(200);
                 res.body.status.should.be.equal('success');
                 res.body.data.should.be.a('object');
-                res.body.data.should.have.property('name');
-                res.body.data.should.have.property('photo');
+                res.body.data.should.have.property('nome');
+                res.body.data.should.have.property('foto');
                 done()
             })
         })
