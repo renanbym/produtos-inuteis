@@ -89,7 +89,7 @@ describe('Categorias ', () => {
 
             categoria.save( (err, categoria) => {
                 chai.request(server)
-                .delete('/api/categorias' )
+                .delete('/api/categorias/'+categoria._id )
                 .send({ _id: categoria._id })
                 .end( (err, res) => {
                     res.body.status.should.be.equal('success');

@@ -149,7 +149,7 @@ describe('Produtos ', () => {
 
                 produto.save( (err, produto) => {
                     chai.request(server)
-                    .delete('/api/produtos' )
+                    .delete('/api/produtos/'+produto._id )
                     .send({ _id: produto._id })
                     .end( (err, res) => {
                         res.body.status.should.be.equal('success');
